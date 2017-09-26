@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-// ========== Route Handlers
+// Route Handlers
 
 // get all entries from DB
 router.get('/meetings', function(req, res) {

@@ -17,27 +17,30 @@ router.get('/meetings', function(req, res) {
 
 // add new entry to DB
 router.post('/meetings', function(req, res) {
-  // let meetingName = req.body.name;
-  // let meetingDuration = req.body.duration;
-  // let meetingAttendees = req.body.attendees;
-  // let meetingSalary = req.body.salary;
-  //
-  // Meeting.create(
-  //   { meetingName: meetingName,
-  //     meetingDuration: meetingDuration,
-  //     meetingAttendees: meetingAttendees,
-  //     meetingSalary: meetingSalary
-  //   }, function(err, Meeting) {
-  //     if (err) {
-  //       console.log(err);
-  //     }
-  //     res.send(Meeting);
-  //   })
+  let meetingName = req.body.name;
+  let meetingDuration = req.body.duration;
+  let meetingAttendees = req.body.attendees;
+  let meetingSalary = req.body.salary;
 
-    Meeting.create(req.body, function (err, Meeting) {
-    if (err) return console.log(err);
-    return res.send(Meeting);
-  });
+  // console.log(req.body.name);
+  // console.log(meetingName);
+
+  Meeting.create(
+    { meetingName: meetingName,
+      meetingDuration: meetingDuration,
+      meetingAttendees: meetingAttendees,
+      meetingSalary: meetingSalary
+     }, function(err, Meeting) {
+      if (err) {
+        console.log(err);
+      }
+      res.send(Meeting);
+    })
+
+  //   Meeting.create(req.body, function (err, Meeting) {
+  //   if (err) return console.log(err);
+  //   return res.send(Meeting);
+  // });
 });
 
 // update entry in DB

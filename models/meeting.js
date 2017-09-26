@@ -3,20 +3,16 @@ const Schema = mongoose.Schema;
 
 const MeetingSchema = new Schema({
   meetingName: {
-    type: String,
-    required: true
+    type: String
   },
   meetingDuration: {
-    type: String,
-    required: true
+    type: String
   },
   meetingAttendees: {
-    type: Number,
-    required: true
+    type: Number
   },
   meetingSalary: {
-    type: String,
-    required: true
+    type: String
   }
 });
 

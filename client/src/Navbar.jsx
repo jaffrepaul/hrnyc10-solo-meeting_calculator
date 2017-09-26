@@ -31,12 +31,3 @@ handleSignOut() {
 }
 
 export default Navbar;
-
-// <div className="navbar navbar-expand-lg navbar-dark bg-dark" >
-// <Link to="/" style={{textDecoration: 'none' }} className="nav-brand" id="title">Meetings$$</Link>
-//
-// <Link to="/meetings" style={{textDecoration: 'none' }} className="Link nav-link h4">MyMeetings</Link>
-//
-// <Link to="/logout" style={{textDecoration: 'none' }} className="Link nav-link h4" id="logout" onClick={this.handleSignOut}> Sign Out</Link>
-//
-// </div>

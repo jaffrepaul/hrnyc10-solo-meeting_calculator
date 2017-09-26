@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import { Route } from 'react-router';
-// import {Link, Redirect} from 'react-router-dom';
 import Navbar from './Navbar.jsx';
 import MeetingForm from './MeetingForm.jsx';
-const axois = require('axios');
+import MyMeetings from './MyMeetings.jsx';
+import MyMeetingsEntry from './MyMeetingsEntry.jsx';
+const axios = require('axios');
 
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      data: []
     };
   }
 
@@ -22,19 +22,32 @@ class App extends React.Component {
 // [] click to save meeting data
 // [] click on my meetings to render them
 
-  handleClick() {
-
+  // get data on pageload
+  componentWillMount() {
+    axios.get('/api/meetings')
+      .then(data => {
+        // console.log('returned data', data.data);
+        this.setState({ data: data });
+        // console.log('state data after setState', this.state.data);
+      })
+      .catch(error => {
+        console.log('error getting data');
+      });
   }
 
-  handleClick() {
-			axios.post('/meetings', {})
-      .then();
-  }
-
-  handleClick() {
-			axios.get('/meetings', {})
-      .then();
-  }
+  // handleClick() {
+  //
+  // }
+  //
+  // handleClick() {
+	// 		axios.post('/meetings', {})
+  //     .then();
+  // }
+  //
+  // handleClick() {
+	// 		axios.get('/meetings', {})
+  //     .then();
+  // }
 
   render() {
     return (
@@ -43,6 +56,7 @@ class App extends React.Component {
 
         <Navbar />
         <MeetingForm />
+        <MyMeetings data={this.state.data}/>
 
         </div>
       </div>

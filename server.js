@@ -16,8 +16,3 @@ app.use('/api', router);
 
 // Tell server where to listen & add log for terminal
 app.listen(3000, () => console.log('listening in port 3000'));
-
-// Initial Route test
-//  app.get('/', (req, res) => {
-//   res.send('server connected');
-// })

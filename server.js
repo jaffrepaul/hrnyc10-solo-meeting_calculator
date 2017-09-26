@@ -11,7 +11,7 @@ const app = express();
 
 // Middleware
 app.use(parser.json());
-app.use(express.static(path.resolve(__dirname, './public')));
+app.use(express.static(path.resolve(__dirname, './client/dist')));
 app.use('/api', router);
 
 // Tell server where to listen & add log for terminal

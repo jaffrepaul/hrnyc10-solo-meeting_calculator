@@ -4,13 +4,28 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "react-dev": "webpack -d --watch",
+    "server-dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaffrepaul/hrnyc10-soloweek-meeting-calculator.git"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.15.5",
-    "mongoose": "^4.11.13"
+    "mongoose": "^4.11.13",
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "webpack": "^3.6.0"
   }
 }

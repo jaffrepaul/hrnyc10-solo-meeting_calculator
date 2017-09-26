@@ -22,9 +22,6 @@ router.post('/meetings', function(req, res) {
   let meetingAttendees = req.body.attendees;
   let meetingSalary = req.body.salary;
 
-  // console.log(req.body.name);
-  // console.log(meetingName);
-
   Meeting.create(
     { meetingName: meetingName,
       meetingDuration: meetingDuration,
@@ -37,9 +34,10 @@ router.post('/meetings', function(req, res) {
       res.send(Meeting);
     })
 
-  //   Meeting.create(req.body, function (err, Meeting) {
-  //   if (err) return console.log(err);
-  //   return res.send(Meeting);
+  // test simlple post for debugging
+  //  Meeting.create(req.body, function (err, Meeting) {
+  //  if (err) return console.log(err);
+  //  return res.send(Meeting);
   // });
 });
 

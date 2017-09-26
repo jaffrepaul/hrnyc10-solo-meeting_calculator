@@ -1,23 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './App.jsx';
+import MeetingForm from './MeetingForm.jsx';
+import MeetingResults from './MeetingResults.jsx';
+import Login from './Login.jsx';
+import MyMeetings from './MyMeetings.jsx';
+import {BrowserRouter, Route, Switch, browserHistory, Redirect} from 'react-router-dom';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-
-    };
-  }
-
-// [add funcs or methods here - e.g func to handle form input *can set state in methods]
-
-  render() {
-    return (
-      <div>
-      Hello!!!!
-      </div>
-    );
-  }
-}
-
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(
+    <BrowserRouter basename='/' >
+      <Switch>
+          <Route path="/" component={App}/>
+          <Route path="/results" component={MeetingResults}/>
+          <Route path="/meetings" component={MyMeetings}/>
+          <Route path="/login" component={Login}/>
+      </Switch>
+    </BrowserRouter>,
+  document.getElementById('app')
+);

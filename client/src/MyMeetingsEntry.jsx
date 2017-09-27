@@ -12,7 +12,7 @@ class MyMeetingsEntry extends React.Component {
     console.log(this.props);
     return (
       <li>
-        {this.props.meeting.name}
+        {this.props.meeting.meetingName}
       </li>
     );
   }

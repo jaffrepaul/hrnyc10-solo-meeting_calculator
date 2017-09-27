@@ -17,7 +17,7 @@ class MyMeetings extends React.Component {
       meetingItems = this.props.meetings.map(meeting => {
         // console.log(meeting); // individual meeting item
         return (
-          <MyMeetingsEntry key={meeting.name} meeting={meeting} />
+          <MyMeetingsEntry key={meeting.meetingName} meeting={meeting} />
         );
       });
     }

@@ -13,10 +13,10 @@ import {BrowserRouter, Route, Switch, browserHistory, Redirect} from 'react-rout
 ReactDOM.render(
   <BrowserRouter basename='/' >
     <Switch>
-        <Route path="/" component={App}/>
-        <Route path="/results" component={MeetingResults}/>
-        <Route path="/meetings" component={MyMeetings}/>
-        <Route path="/login" component={Login}/>
+      <Route path="/" component={App}/>
+      <Route path="/results" component={MeetingResults}/>
+      <Route path="/meetings" component={MyMeetings}/>
+      <Route path="/login" component={Login}/>
     </Switch>
   </BrowserRouter>,
 document.getElementById('app')

@@ -48,27 +48,37 @@ class App extends React.Component {
   // }
 
   componentWillMount() {
-    this.setState({ meetings: [
-        {
-          name: 'test meeting',
-          duration: '60min',
-          attendees: 6,
-          salary: '101,000'
-        },
-        {
-          name: 'test meeting2',
-          duration: '45min',
-          attendees: 6,
-          salary: '105,000'
-        },
-        {
-          name: 'test meeting3',
-          duration: '600min',
-          attendees: 6,
-          salary: '600,000'
-        }
-      ]});
-  }
+    // this.setState({ meetings: [
+    //     {
+    //       name: 'test meeting',
+    //       duration: '60min',
+    //       attendees: 6,
+    //       salary: '101,000'
+    //     },
+    //     {
+    //       name: 'test meeting2',
+    //       duration: '45min',
+    //       attendees: 6,
+    //       salary: '105,000'
+    //     },
+    //     {
+    //       name: 'test meeting3',
+    //       duration: '600min',
+    //       attendees: 6,
+    //       salary: '600,000'
+    //     }
+    //   ]});
+
+    axios.get('/api/meetings')
+      .then(data => {
+        // console.log('returned data', data.data); //getting back data from req
+        this.setState({ meetings: data.data });
+        // console.log('state data after setState', this.state.meetings);
+      })
+      .catch(error => {
+        console.log('error getting data');
+      });
+    }
 
     render() {
       return (

@@ -36,12 +36,3 @@ document.getElementById('app')
 );
 
 // <App />
-
-// <BrowserRouter basename='/' >
-// <Switch>
-// <Route path="/" component={App}/>
-// <Route path="/results" component={MeetingResults}/>
-// <Route path="/meetings" component={MyMeetings}/>
-// <Route path="/login" component={Login}/>
-// </Switch>
-// </BrowserRouter>,

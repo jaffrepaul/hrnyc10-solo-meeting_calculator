@@ -6,8 +6,7 @@ import MyMeetings from './MyMeetings.jsx';
 import MyMeetingsEntry from './MyMeetingsEntry.jsx';
 import Login from './Login.jsx';
 import SignUp from './Signup.jsx';
-const axios = require('axios');
-
+import axios from 'axios';
 
 class App extends React.Component {
   constructor(props) {
@@ -31,27 +30,26 @@ class App extends React.Component {
   //     .then();
   // }
 
-  // componentWillMount() {
-  //   axios.get('/api/meetings')
-  //     .then(data => {
-  //       // console.log('returned data', data.data); //getting back data from req
-  //       this.setState({ meetings: data.data });
-  //       // console.log('state data after setState', this.state.meetings);
-  //     })
-  //     .catch(error => {
-  //       console.log('error getting data');
-  //     });
-  //   }
+  componentWillMount() {
+    axios.get('/api/meetings')
+      .then(data => {
+        // console.log('returned data', data.data); //getting back data from req
+        this.setState({ meetings: data.data });
+        // console.log('state data after setState', this.state.meetings);
+      })
+      .catch(error => {
+        console.log('error getting data');
+      });
+    }
 
     render() {
       return (
         <div className="App">
-          <Navbar />
           <MeetingForm />
+          <MyMeetings meetings={this.state.meetings}/>
         </div>
       );
     }
   }
 
 export default App;
-// <MyMeetings meetings={this.state.meetings}/>

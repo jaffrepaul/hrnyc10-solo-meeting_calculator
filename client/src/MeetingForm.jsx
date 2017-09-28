@@ -14,7 +14,7 @@ class MeetingForm extends React.Component {
   render() {
     return (
       <div>
-         <form action="/meetings" method="post">
+         <form>
             <div>
                 <label>Meeting Name:</label>
                 <input type="text" id="meetingname" name="meeting_name"/>

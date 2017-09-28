@@ -16,20 +16,6 @@ class App extends React.Component {
     };
   }
 
-  // handleClick() {
-  //
-  // }
-  //
-  // handleClick() {
-	// 		axios.post('/meetings', {})
-  //     .then();
-  // }
-  //
-  // handleClick() {
-	// 		axios.get('/meetings', {})
-  //     .then();
-  // }
-
   componentWillMount() {
     axios.get('/api/meetings')
       .then(data => {
@@ -46,10 +32,10 @@ class App extends React.Component {
       return (
         <div className="App">
           <MeetingForm />
-          <MyMeetings meetings={this.state.meetings}/>
         </div>
       );
     }
   }
 
 export default App;
+// <MyMeetings meetings={this.state.meetings}/>

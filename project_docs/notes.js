@@ -1,19 +1,19 @@
-notes:
-
-modules:
-- app: main, sets state -> passes down to child components -> handles interaction funcs -> renders all components
-
-- navbar: contains logo, links, & styles to separate from body (might not need to be stateful - just render links)
-
-- form: fields & button where user submits criteria for meeting cost
-
-- results: calculated results & designs with save button - could display on form (might not need
-state - just render results for submit)
-
-- my meetings: displays list of saved meetingsListEntry (stateful)
-
-- user login
-- user sign in
+// notes:
+//
+// modules:
+// - app: main, sets state -> passes down to child components -> handles interaction funcs -> renders all components
+//
+// - navbar: contains logo, links, & styles to separate from body (might not need to be stateful - just render links)
+//
+// - form: fields & button where user submits criteria for meeting cost
+//
+// - results: calculated results & designs with save button - could display on form (might not need
+// state - just render results for submit)
+//
+// - my meetings: displays list of saved meetingsListEntry (stateful)
+//
+// - user login
+// - user sign in
 
 // ==========
 

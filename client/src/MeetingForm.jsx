@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Navbar from './Navbar.jsx';
+
 
 class MeetingForm extends React.Component {
   constructor(props) {
@@ -8,8 +10,6 @@ class MeetingForm extends React.Component {
 
     };
   }
-
-// [add funcs or methods here - e.g func to handle form input *can set state in methods]
 
   render() {
     return (

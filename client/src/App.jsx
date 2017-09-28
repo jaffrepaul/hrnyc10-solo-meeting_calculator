@@ -4,6 +4,8 @@ import Navbar from './Navbar.jsx';
 import MeetingForm from './MeetingForm.jsx';
 import MyMeetings from './MyMeetings.jsx';
 import MyMeetingsEntry from './MyMeetingsEntry.jsx';
+import Login from './Login.jsx';
+import SignUp from './Signup.jsx';
 const axios = require('axios');
 
 

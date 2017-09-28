@@ -15,22 +15,24 @@ class Navbar extends React.Component {
   render() {
     return (
 
-      <div className="container">
-      <nav className="navbar navbar-expand-lg navbar-light bg-light rounded">
-        <a className="navbar-brand" to='/'>Meeting$$<span className="sr-only">(current)</span></a>
+    // <div className="container">
+    // <nav className="navbar navbar-expand-lg navbar-light bg-light rounded">
+    //   <a className="navbar-brand" to='/'>Meeting$$<span className="sr-only">(current)</span></a>
+    //
+    //     <div className="collapse navbar-collapse" id="navbarsExample09">
+    //       <ul className="navbar-nav mr-auto">
+    //         <li className="nav-item">
+    //           <NavLink className="nav-link" to='/meetings'>MyMeetings </NavLink>
+    //         </li>
+    //         <li className="nav-item">
+    //           <NavLink className="nav-link" to='/login'>Logout </NavLink>
+    //         </li>
+    //       </ul>
+    //     </div>
+    //   </nav>
+    // </div>
 
-        <div className="collapse navbar-collapse" id="navbarsExample09">
-          <ul className="navbar-nav mr-auto">
-            <li className="nav-item">
-              <NavLink className="nav-link" to='/meetings'>MyMeetings </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to='/login'>Logout </NavLink>
-            </li>
-          </ul>
-        </div>
-      </nav>
-
+    <div>
     </div>
 
     );

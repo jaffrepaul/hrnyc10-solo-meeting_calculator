@@ -14,6 +14,7 @@ class MeetingForm extends React.Component {
   render() {
     return (
       <div>
+      <br />
          <form>
             <div>
                 <label>Meeting Name:</label>
@@ -30,10 +31,10 @@ class MeetingForm extends React.Component {
             <div>
                 <label>Average Attendee Salary:</label>
                 <input type="text" id="attendeesalary" name="meeting_salary"/>
-            </div>
+            </div><br />
 
             <div className="button">
-              <button type="submit">Get Meeting Cost</button>
+              <button className="btn btn-primary" type="submit">Get Meeting Cost</button>
             </div>
         </form>
       </div>

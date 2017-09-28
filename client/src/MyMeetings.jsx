@@ -21,7 +21,8 @@ class MyMeetings extends React.Component {
 
     return (
     <div>
-      MY MEETINGS!
+    <br />
+      <strong>MY MEETINGS!</strong>
       {meetingItems}
     </div>
     );

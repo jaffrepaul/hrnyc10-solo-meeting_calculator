@@ -8,7 +8,7 @@ import MeetingForm from './MeetingForm.jsx';
 import MeetingResults from './MeetingResults.jsx';
 import MyMeetings from './MyMeetings.jsx';
 import MyMeetingsEntry from './MyMeetingsEntry.jsx';
-import {BrowserRouter as Router, Route, Link, NavLink} from 'react-router-dom'
+import {BrowserRouter as Router, Route, NavLink, Switch} from 'react-router-dom'
 
 ReactDOM.render(
   <Router>
@@ -27,9 +27,12 @@ ReactDOM.render(
           </ul>
         </div>
       </nav>
-      <Route exact path="/" component={App}/>
-      <Route path="/meetings" component={MyMeetings}/>
-      <Route path="/login" component={Login}/>
+
+      <Switch>
+        <Route exact path="/" component={App}/>
+        <Route path="/meetings" component={MyMeetings}/>
+        <Route path="/login" component={Login}/>
+      </Switch>
     </div>
   </Router>,
 document.getElementById('app')

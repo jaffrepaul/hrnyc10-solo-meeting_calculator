@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import MeetingResults from 'MeetingResults.jsx';
+import MeetingResults from './MeetingResults.jsx';
 import axios from 'axios';
 
 
@@ -19,27 +19,33 @@ class MeetingForm extends React.Component {
     this.handleAttendees = this.handleAttendees.bind(this);
     this.handleSalary = this.handleSalary.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-	handleClick(e){
+	handleClick(e) {
     e.preventDefault();
     // console.log('hi');
     let name = this.state.meetingName;
     let duration = this.state.meetingDuration;
     let attendees = this.state.meetingAttendees;
     let salary = this.state.attendeeSalary;
-    let total = Math.floor(duration + attendees + salary * 1.4);
+    let subTotal = salary / 260 / 8 / 60 * 100;
+
+    let total = Math.floor(subTotal);
 
     this.setState({
       meetingTotal: total
     });
-
 	}
 
-  // handleSubmit() {
-  //
-  // }
+  // calculation:
+  // 260 working days (minus weekends, etc)
+  // sal/260 = paid per day / 8hr = cost per person per hour / 60 cost per person per minute
+  // e.g: 100,000/260 = 384 / 8 / 60 = 0.80128205128
 
+  handleSubmit(e) {
+  console.log('hello from submit button');
+  // preventDefault();
   // axios.post('/meetings', {
   // 	meetingName: this.state.meetingName,
   // 	meetingDuration: this.state.meetingDuration,
@@ -52,22 +58,23 @@ class MeetingForm extends React.Component {
   // .catch((error) => {
   // 	console.log(error);
   // })
+}
 
-  	handleName(e){
-  		this.setState({meetingName: e.target.value});
-  	}
+	handleName(e){
+		this.setState({meetingName: e.target.value});
+	}
 
-  	handleDuration(e){
-  		this.setState({meetingDuration: e.target.value});
-  	}
+	handleDuration(e){
+		this.setState({meetingDuration: e.target.value});
+	}
 
-  	handleAttendees(e){
-  		this.setState({meetingAttendees: e.target.value});
-  	}
+	handleAttendees(e){
+		this.setState({meetingAttendees: e.target.value});
+	}
 
-  	handleSalary(e){
-  		this.setState({attendeeSalary: e.target.value});
-  	}
+	handleSalary(e){
+		this.setState({attendeeSalary: e.target.value});
+	}
 
   render() {
     return (
@@ -91,18 +98,15 @@ class MeetingForm extends React.Component {
               <label>Average Attendee Salary</label>
               <input onChange={this.handleSalary} type="number" id="attendeesalary" name="meeting_salary" value={this.state.attendeeSalary}/>
             </div><br />
-
            <div className="button">
               <button onClick={this.handleClick} className="btn btn-primary" type="submit">Get Meeting Cost</button>
-            </div>
-            <br />
+           </div>
+           <br />
         </form>
-        <hr/>
-        <br />
 
-        <div>
-        { this.state.meetingTotal ? <div><p><strong>My Meeting Cost:</strong></p><h3>{this.state.meetingName}</h3><span>${this.state.meetingTotal}</span><br /><button className="btn btn-sm btn-default" type="submit">Save MyMeeting</button></div> : <div></div> }
-        </div>
+        <hr/>
+
+        {this.state.meetingTotal ? <MeetingResults data={this.state} /> : <div></div>}
 
       </div>
     );
@@ -110,5 +114,3 @@ class MeetingForm extends React.Component {
 }
 
 export default MeetingForm;
-
-// <MeetingResults />

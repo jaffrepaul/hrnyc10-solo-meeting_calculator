@@ -8,6 +8,7 @@ import MeetingForm from './MeetingForm.jsx';
 import MeetingResults from './MeetingResults.jsx';
 import MyMeetings from './MyMeetings.jsx';
 import MyMeetingsEntry from './MyMeetingsEntry.jsx';
+import MyMeetingsResults from './MeetingResults.jsx';
 import {BrowserRouter as Router, Route, NavLink, Switch} from 'react-router-dom'
 
 ReactDOM.render(

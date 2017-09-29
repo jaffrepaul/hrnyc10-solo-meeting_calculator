@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Navbar from './Navbar.jsx';
+// import MeetingResults from 'MeetingResults.jsx';
 import axios from 'axios';
 
 
@@ -73,30 +73,36 @@ class MeetingForm extends React.Component {
     return (
       <div>
       <br />
+        <p><strong>Enter Meeting Info:</strong></p>
          <form>
             <div>
-              <label>Meeting Name:</label>
+              <label>Meeting Name</label>
               <input onChange={this.handleName} type="text" id="meetingname" name="meeting_name" value={this.state.meetingName}/>
             </div>
             <div>
-              <label>Meeting Duration:</label>
+              <label>Meeting Duration</label>
               <input onChange={this.handleDuration} type="number" id="meetingduration" name="meeting_duration" value={this.state.meetingDuration}/>
             </div>
             <div>
-              <label>Meeting Attendees:</label>
+              <label>Meeting Attendees</label>
               <input onChange={this.handleAttendees} type="number" id="meetingattendees" name="meeting_attendees" value={this.state.meetingAttendees}/>
             </div>
             <div>
-              <label>Average Attendee Salary:</label>
+              <label>Average Attendee Salary</label>
               <input onChange={this.handleSalary} type="number" id="attendeesalary" name="meeting_salary" value={this.state.attendeeSalary}/>
             </div><br />
 
            <div className="button">
               <button onClick={this.handleClick} className="btn btn-primary" type="submit">Get Meeting Cost</button>
             </div>
+            <br />
         </form>
+        <hr/>
         <br />
-        { this.state.meetingTotal ? <div><h3>{this.state.meetingName}</h3><span>{this.state.meetingTotal}</span></div> : <div></div> }
+
+        <div>
+        { this.state.meetingTotal ? <div><p><strong>My Meeting Cost:</strong></p><h3>{this.state.meetingName}</h3><span>${this.state.meetingTotal}</span><br /><button className="btn btn-sm btn-default" type="submit">Save MyMeeting</button></div> : <div></div> }
+        </div>
 
       </div>
     );
@@ -104,3 +110,5 @@ class MeetingForm extends React.Component {
 }
 
 export default MeetingForm;
+
+// <MeetingResults />

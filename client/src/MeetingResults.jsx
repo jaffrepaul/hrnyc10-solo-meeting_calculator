@@ -10,8 +10,8 @@ class MeetingResults extends React.Component {
   render() {
     return (
       <div>
-        <div><p>My Meeting Cost:</p><h3>{this.props.data.meetingName}</h3>
-        <span>${this.props.data.meetingTotal}</span><br />
+        <div><p>My Meeting Cost:</p><h3>{this.props.meetings.meetingName}</h3>
+        ${this.props.meetings.meetingTotal}<br />
         <button className="btn btn-sm btn-default" type="submit">Save MyMeeting</button></div>
       </div>
     );

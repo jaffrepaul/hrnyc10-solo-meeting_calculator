@@ -20,27 +20,28 @@ class MeetingForm extends React.Component {
     this.handleSalary = this.handleSalary.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClearForm = this.handleClearForm.bind(this);
   }
 
 	handleClick(e) {
+  /* calculation:
+  260 working days (minus weekends, etc)
+  sal/260 = paid per day / 8hr = cost per person per hour / 60 cost per person per minute
+  e.g per person...100,000/260 = 384 / 8 / 60 = 0.80128205128 */
+
     e.preventDefault();
     let name = this.state.meetingName;
     let duration = this.state.meetingDuration;
     let attendees = this.state.meetingAttendees;
     let salary = this.state.attendeeSalary;
     let totalPerPerson = salary / 260 / 8 / 60 * 100;
-
     let total = Math.floor(totalPerPerson * attendees);
 
     this.setState({
       meetingTotal: total
     });
-	}
 
-  // calculation:
-  // 260 working days (minus weekends, etc)
-  // sal/260 = paid per day / 8hr = cost per person per hour / 60 cost per person per minute
-  // e.g per person...100,000/260 = 384 / 8 / 60 = 0.80128205128
+	}
 
   handleSubmit(e) {
   console.log('hello from submit button');
@@ -75,6 +76,17 @@ class MeetingForm extends React.Component {
 		this.setState({attendeeSalary: e.target.value});
 	}
 
+  handleClearForm(e) {
+    e.preventDefault();
+    this.setState({
+      meetingName: '',
+      meetingDuration: '',
+      meetingAttendees: '',
+      attendeeSalary: '',
+      meetingTotal: ''
+    });
+  }
+
   render() {
     return (
       <div>
@@ -99,13 +111,14 @@ class MeetingForm extends React.Component {
             </div><br />
            <div className="button">
               <button onClick={this.handleClick} className="btn btn-primary" type="submit">Get Meeting Cost</button>
+              <button onClick={this.handleClearForm} className="btn btn-sm btn-link" type="submit">Start over</button>
            </div>
            <br />
         </form>
 
         <hr/>
 
-        {this.state.meetingTotal ? <MeetingResults data={this.state} /> : <div></div>}
+        {this.state.meetingTotal ? <MeetingResults meetings={this.state} /> : <div></div>}
 
       </div>
     );

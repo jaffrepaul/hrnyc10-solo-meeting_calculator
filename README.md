@@ -8,4 +8,4 @@ An app that calculates the cost of company meetings.
 
 # Tech Stack:
 
-<a href="https://www.screencast.com/t/V5QCGnpUyg" target="_blank"><img src="https://www.screencast.com/t/V5QCGnpUyg" alt="" style="max-width:100%;"></a>
+![Alt text](./project_docs/calculator_stack.png?raw=true "Optional Title")

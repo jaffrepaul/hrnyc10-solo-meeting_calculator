@@ -21,7 +21,7 @@ class MeetingResults extends React.Component {
       cost: this.props.meetings.meetingCost
     })
     .then((response) => {
-    	console.log(response);
+      console.log(response);
     })
     .catch((error) => {
     	console.log(error);
@@ -30,18 +30,17 @@ class MeetingResults extends React.Component {
 
   render() {
     return (
-      <div>
-        <div><h3>{this.props.meetings.meetingName}</h3>
-        Your meeting is costing you: <strong>${this.props.meetings.meetingCost}</strong><br />
-        <br />
-          <button onClick={this.handleSubmit} className="btn btn-sm btn-default" type="submit">Save MyMeeting</button></div>
-        <br />
-        <br />
+      <div className="card">
+        <img className="card-img-top" src="https://media.giphy.com/media/5fBH6z8aMV1RbA4FaSc/giphy.gif" alt="Card image cap" />
+          <div className="card-body">
+          <h3>{this.props.meetings.meetingName}</h3>
+          <p className="card-text">Your meeting is costing you:
+          <strong>${this.props.meetings.meetingCost}</strong></p>
+            <button onClick={this.handleSubmit} className="btn btn-sm btn-light" type="submit">Save MyMeeting</button>
+          </div>
       </div>
     );
   }
 }
 
 export default MeetingResults;
-
-// <p>My Meeting Cost:</p>

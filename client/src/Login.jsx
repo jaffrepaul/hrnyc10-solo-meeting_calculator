@@ -31,6 +31,8 @@ class Login extends React.Component {
       // console.log(this.state.meetings);
       return (
         <div className="App">
+          <br />
+          <strong>My Meetings:</strong>
           <MyMeetings meetings={this.state.meetings}/>
         </div>
       );

@@ -34,8 +34,7 @@ class MeetingResults extends React.Component {
         <img className="card-img-top" src="https://media.giphy.com/media/5fBH6z8aMV1RbA4FaSc/giphy.gif" alt="Card image cap" />
           <div className="card-body">
           <h3>{this.props.meetings.meetingName}</h3>
-          <p className="card-text">Your meeting is costing you:
-          <strong>${this.props.meetings.meetingCost}</strong></p>
+          <p className="card-text">Your meeting is costing you: <strong>${this.props.meetings.meetingCost}</strong></p>
             <button onClick={this.handleSubmit} className="btn btn-sm btn-light" type="submit">Save MyMeeting</button>
           </div>
       </div>

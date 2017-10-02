@@ -15,7 +15,10 @@ ReactDOM.render(
   <Router>
     <div className="container">
     <nav className="navbar navbar-expand-lg navbar-light bg-light rounded">
-      <NavLink className="navbar-brand" to='/'>Meeting$$<span className="sr-only">(current)</span></NavLink>
+    <a className="navbar-brand" href="#">
+      <img src="http://icons.iconarchive.com/icons/graphicloads/flat-finance/256/dollar-collection-icon.png" width="35" height="35" class="d-inline-block align-top" alt="" />
+    </a>
+      <NavLink className="navbar-brand" to='/'>MeetingMoney<span className="sr-only">(current)</span></NavLink>
 
         <div className="collapse navbar-collapse" id="navbarsExample09">
           <ul className="navbar-nav mr-auto">

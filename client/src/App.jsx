@@ -17,18 +17,6 @@ class App extends React.Component {
     };
   }
 
-  // componentWillMount() {
-  //   axios.get('/api/meetings')
-  //     .then(data => {
-  //       // console.log('returned data', data.data); //getting back data from req
-  //       this.setState({ meetings: data.data });
-  //       // console.log('state data after setState', this.state.meetings);
-  //     })
-  //     .catch(error => {
-  //       console.log('error getting data');
-  //     });
-  //   }
-
     render() {
       return (
         <div className="App">

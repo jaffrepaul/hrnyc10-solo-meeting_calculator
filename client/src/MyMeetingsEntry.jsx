@@ -9,10 +9,10 @@ class MyMeetingsEntry extends React.Component {
   }
 
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     return (
       <div>
-        <div>{this.props.meeting.meetingName} - {this.props.meeting.meetingDuration} - {this.props.meeting.meetingAttendees} - {this.props.meeting.meetingSalary}
+        <div>{this.props.meeting.meetingName} - {this.props.meeting.meetingDuration} - {this.props.meeting.meetingAttendees} - {this.props.meeting.meetingSalary} - {this.props.meeting.meetingCost}
         </div>
       </div>
     );

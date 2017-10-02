@@ -14,7 +14,7 @@ const MeetingSchema = new Schema({
   meetingSalary: {
     type: String
   },
-  meetingTotal: {
+  meetingCost: {
     type: String
   }
 });

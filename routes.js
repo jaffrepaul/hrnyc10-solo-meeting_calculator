@@ -21,12 +21,14 @@ router.post('/meetings', function(req, res) {
   let meetingDuration = req.body.duration;
   let meetingAttendees = req.body.attendees;
   let meetingSalary = req.body.salary;
+  let meetingCost = req.body.cost;
 
   Meeting.create(
     { meetingName: meetingName,
       meetingDuration: meetingDuration,
       meetingAttendees: meetingAttendees,
-      meetingSalary: meetingSalary
+      meetingSalary: meetingSalary,
+      meetingCost: meetingCost
      }, function(err, Meeting) {
       if (err) {
         console.log(err);

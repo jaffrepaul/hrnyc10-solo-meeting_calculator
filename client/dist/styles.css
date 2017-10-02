@@ -1,10 +1,15 @@
 .form-control {
-  width: 200px;
+  width: 300px;
 }
 
-/*.form-container {
+.form-container {
   display: flex;
   flex-direction: row;
-  align-items: stretch;
   justify-content: center;
-}*/
+  margin-top: 50px;
+}
+
+.results-containder {
+  margin-top: 50px;
+  margin-left: 80px;
+}

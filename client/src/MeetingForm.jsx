@@ -12,14 +12,13 @@ class MeetingForm extends React.Component {
       meetingDuration: '',
       meetingAttendees: '',
       attendeeSalary: '',
-      meetingTotal: ''
+      meetingCost: ''
     };
     this.handleName = this.handleName.bind(this);
     this.handleDuration = this.handleDuration.bind(this);
     this.handleAttendees = this.handleAttendees.bind(this);
     this.handleSalary = this.handleSalary.bind(this);
     this.handleClick = this.handleClick.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClearForm = this.handleClearForm.bind(this);
   }
 
@@ -35,31 +34,13 @@ class MeetingForm extends React.Component {
     let attendees = this.state.meetingAttendees;
     let salary = this.state.attendeeSalary.replace(/[$,]/g, "") * 1.4;
     let totalPerPerson = salary / 365 / 8 / 60 * 100;
-    let total = Math.floor(totalPerPerson * attendees);
+    let cost = Math.floor(totalPerPerson * attendees);
 
     this.setState({
-      meetingTotal: total
+      meetingCost: cost
     });
 
 	}
-
-  handleSubmit(e) {
-  e.preventDefault();
-  console.log('hello from submit button');
-  // preventDefault();
-  // axios.post('/meetings', {
-  // 	meetingName: this.state.meetingName,
-  // 	meetingDuration: this.state.meetingDuration,
-  // 	meetingAttendees: this.state.meetingAttendees,
-  // 	attendeeSalary: this.state.attendeeSalary,
-  // })
-  // .then((response) => {
-  // 	console.log(response);
-  // })
-  // .catch((error) => {
-  // 	console.log(error);
-  // })
-}
 
 	handleName(e){
 		this.setState({meetingName: e.target.value});
@@ -93,7 +74,7 @@ class MeetingForm extends React.Component {
       meetingDuration: '',
       meetingAttendees: '',
       attendeeSalary: '',
-      meetingTotal: ''
+      meetingCost: ''
     });
   }
 
@@ -152,9 +133,8 @@ class MeetingForm extends React.Component {
            <br />
         </form>
 
-        <hr/>
-        <div>
-          {this.state.meetingTotal ? <MeetingResults meetings={this.state} /> : <div></div>}
+        <div className="results-containder">
+          {this.state.meetingCost ? <MeetingResults meetings={this.state} /> : <div></div>}
         </div>
       </div>
     );

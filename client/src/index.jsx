@@ -20,10 +20,10 @@ ReactDOM.render(
         <div className="collapse navbar-collapse" id="navbarsExample09">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-              <NavLink className="nav-link" to='/meetings'>MyMeetings </NavLink>
+              <NavLink className="nav-link" to='/meetings'></NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to='/login'>Logout </NavLink>
+              <NavLink className="nav-link" to='/login'>MyMeetings </NavLink>
             </li>
           </ul>
         </div>

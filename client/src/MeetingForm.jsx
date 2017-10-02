@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import MeetingResults from './MeetingResults.jsx';
 import axios from 'axios';
-
+import NumberFormat from 'react-number-format';
 
 class MeetingForm extends React.Component {
   constructor(props) {
@@ -33,8 +33,8 @@ class MeetingForm extends React.Component {
     let name = this.state.meetingName;
     let duration = this.state.meetingDuration;
     let attendees = this.state.meetingAttendees;
-    let salary = this.state.attendeeSalary;
-    let totalPerPerson = salary / 260 / 8 / 60 * 100;
+    let salary = this.state.attendeeSalary.replace(/[$,]/g, "") * 1.4;
+    let totalPerPerson = salary / 365 / 8 / 60 * 100;
     let total = Math.floor(totalPerPerson * attendees);
 
     this.setState({
@@ -44,6 +44,7 @@ class MeetingForm extends React.Component {
 	}
 
   handleSubmit(e) {
+  e.preventDefault();
   console.log('hello from submit button');
   // preventDefault();
   // axios.post('/meetings', {
@@ -76,6 +77,15 @@ class MeetingForm extends React.Component {
 		this.setState({attendeeSalary: e.target.value});
 	}
 
+  handleEnter(event) {
+    if (event.keyCode === 13) {
+      const form = event.target.form;
+      const index = Array.prototype.indexOf.call(form, event.target);
+      form.elements[index + 1].focus();
+      event.preventDefault();
+    }
+  }
+
   handleClearForm(e) {
     e.preventDefault();
     this.setState({
@@ -89,37 +99,63 @@ class MeetingForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="form-container">
       <br />
-        <p><strong>Enter Meeting Info:</strong></p>
          <form>
             <div>
-              <label>Meeting Name</label>
-              <input onChange={this.handleName} type="text" id="meetingname" name="meeting_name" value={this.state.meetingName}/>
+              <label>Meeting Name
+              <input onChange={this.handleName} onKeyDown={this.handleEnter} type="text" id="meetingname" className="form-control" name="meeting_name" value={this.state.meetingName} />
+              </label>
             </div>
             <div>
-              <label>Meeting Duration</label>
-              <input onChange={this.handleDuration} type="number" id="meetingduration" name="meeting_duration" value={this.state.meetingDuration}/>
+              <label>Meeting Duration
+                <select onChange={this.handleDuration} onKeyDown={this.handleEnter}  type="number" id="meetingduration" className="form-control" name="meeting_duration" value={this.state.meetingDuration}>
+                  <option></option>
+                  <option>30min</option>
+                  <option>45min</option>
+                  <option>1hr</option>
+                  <option>1.5hr</option>
+                  <option>2hr</option>
+                  <option>2.5hr</option>
+                  <option>3hr</option>
+                  <option>NEVER meet this long!</option>
+                </select>
+              </label>
             </div>
             <div>
-              <label>Meeting Attendees</label>
-              <input onChange={this.handleAttendees} type="number" id="meetingattendees" name="meeting_attendees" value={this.state.meetingAttendees}/>
+              <label>Meeting Attendees
+              <select onChange={this.handleAttendees} onKeyDown={this.handleEnter} type="number" id="meetingattendees" className="form-control" name="meeting_attendees" value={this.state.meetingAttendees}>
+                  <option></option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                  <option>10</option>
+                  <option>11</option>
+                  <option>12</option>
+                </select>
+              </label>
             </div>
             <div>
-              <label>Average Attendee Salary</label>
-              <input onChange={this.handleSalary} type="text" id="attendeesalary" name="meeting_salary" value={this.state.attendeeSalary}/>
+              <label>Average Attendee Salary
+              <NumberFormat onChange={this.handleSalary} onKeyDown={this.handleEnter} type="text" id="attendeesalary" className="form-control" name="meeting_salary" thousandSeparator={true} prefix={'$'} value={this.state.attendeeSalary}/>
+              </label>
             </div><br />
-           <div className="button">
+            <div className="button">
               <button onClick={this.handleClick} className="btn btn-primary" type="submit">Get Meeting Cost</button>
               <button onClick={this.handleClearForm} className="btn btn-sm btn-link" type="submit">Start over</button>
-           </div>
+            </div>
            <br />
         </form>
 
         <hr/>
-
-        {this.state.meetingTotal ? <MeetingResults meetings={this.state} /> : <div></div>}
-
+        <div>
+          {this.state.meetingTotal ? <MeetingResults meetings={this.state} /> : <div></div>}
+        </div>
       </div>
     );
   }

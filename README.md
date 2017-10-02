@@ -7,5 +7,5 @@ An app that calculates the cost of company meetings.
 3. npm run server-dev
 
 # Tech Stack:
-<ahref="/Users/paulj/Desktop/HR_repos/hrnyc-10/hrnyc10-soloweek-meeting-calculator/project_docs/calculator_stack.png><img src="/Users/paulj/Desktop/HR_repos/hrnyc-10/hrnyc10-soloweek-meeting-calculator/project_docs/calculator_stack.png
-?raw=true" alt="" style="max-width:100%;"></a>
+
+<a href="https://www.screencast.com/t/V5QCGnpUyg" target="_blank"><img src="https://www.screencast.com/t/V5QCGnpUyg" alt="" style="max-width:100%;"></a>

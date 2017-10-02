@@ -11,7 +11,7 @@ class MeetingForm extends React.Component {
       meetingName: '',
       meetingDuration: '',
       meetingAttendees: '',
-      attendeeSalary: '',
+      meetingSalary: '',
       meetingCost: ''
     };
     this.handleName = this.handleName.bind(this);
@@ -24,15 +24,15 @@ class MeetingForm extends React.Component {
 
 	handleClick(e) {
   /* calculation:
-  260 working days (minus weekends, etc)
-  sal/260 = paid per day / 8hr = cost per person per hour / 60 cost per person per minute
+  365 or 260 working days (minus weekends, etc)
+  sal/365 = paid per day / 8hr = cost per person per hour / 60 cost per person per minute
   e.g per person...100,000/260 = 384 / 8 / 60 = 0.80128205128 */
-
+    // console.log('hello from meeting cost button');
     e.preventDefault();
     let name = this.state.meetingName;
     let duration = this.state.meetingDuration;
     let attendees = this.state.meetingAttendees;
-    let salary = this.state.attendeeSalary.replace(/[$,]/g, "") * 1.4;
+    let salary = this.state.meetingSalary.replace(/[$,]/g, "") * 1.4;
     let totalPerPerson = salary / 365 / 8 / 60 * 100;
     let cost = Math.floor(totalPerPerson * attendees);
 
@@ -55,7 +55,7 @@ class MeetingForm extends React.Component {
 	}
 
 	handleSalary(e){
-		this.setState({attendeeSalary: e.target.value});
+		this.setState({meetingSalary: e.target.value});
 	}
 
   handleEnter(event) {
@@ -73,7 +73,7 @@ class MeetingForm extends React.Component {
       meetingName: '',
       meetingDuration: '',
       meetingAttendees: '',
-      attendeeSalary: '',
+      meetingSalary: '',
       meetingCost: ''
     });
   }
@@ -123,7 +123,7 @@ class MeetingForm extends React.Component {
             </div>
             <div>
               <label>Average Attendee Salary
-              <NumberFormat onChange={this.handleSalary} onKeyDown={this.handleEnter} type="text" id="attendeesalary" className="form-control" name="meeting_salary" thousandSeparator={true} prefix={'$'} value={this.state.attendeeSalary}/>
+              <NumberFormat onChange={this.handleSalary} onKeyDown={this.handleEnter} type="text" id="attendeesalary" className="form-control" name="meeting_salary" thousandSeparator={true} prefix={'$'} value={this.state.meetingSalary}/>
               </label>
             </div><br />
             <div className="button">
@@ -133,7 +133,7 @@ class MeetingForm extends React.Component {
            <br />
         </form>
 
-        <div className="results-containder">
+        <div className="results-container">
           {this.state.meetingCost ? <MeetingResults meetings={this.state} /> : <div></div>}
         </div>
       </div>

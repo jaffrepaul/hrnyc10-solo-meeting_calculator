@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import MyMeetingsEntry from './MyMeetingsEntry.jsx';
-import Navbar from './Navbar.jsx';
-const axios = require('axios');
-
+import axios from 'axios';
 
 class MyMeetings extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    };
+  }
 
   render() {
     // console.log(this.props); //array of state data
@@ -22,8 +25,6 @@ class MyMeetings extends React.Component {
 
     return (
     <div>
-    <br />
-      <strong>MY MEETINGS!</strong>
       {meetingItems}
     </div>
     );

@@ -92,7 +92,7 @@ class MeetingForm extends React.Component {
               <label>Meeting Duration
                 <select onChange={this.handleDuration} onKeyDown={this.handleEnter}  type="number" id="meetingduration" className="form-control" name="meeting_duration" value={this.state.meetingDuration}>
                   <option></option>
-                  <option selected>30min</option>
+                  <option>30min</option>
                   <option>45min</option>
                   <option>1hr</option>
                   <option>1.5hr</option>

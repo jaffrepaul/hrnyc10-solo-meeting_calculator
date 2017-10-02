@@ -14,9 +14,9 @@ import {BrowserRouter as Router, Route, NavLink, Switch} from 'react-router-dom'
 ReactDOM.render(
   <Router>
     <div className="container">
-    <nav className="navbar navbar-expand-lg navbar-light bg-light rounded">
-    <a className="navbar-brand" href="#">
-      <img src="http://icons.iconarchive.com/icons/graphicloads/flat-finance/256/dollar-collection-icon.png" width="35" height="35" class="d-inline-block align-top" alt="" />
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark rounded">
+    <a className="navbar-brand" href="/">
+      <img src="http://icons.iconarchive.com/icons/graphicloads/flat-finance/256/dollar-collection-icon.png" width="35" height="35" className="d-inline-block align-top" alt="" />
     </a>
       <NavLink className="navbar-brand" to='/'>MeetingMoney<span className="sr-only">(current)</span></NavLink>
 
